@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        // 고무오리 디버깅 시작
+        String line = reader.readLine();
+
+        // 총 들어온 문제를 세주자
+        int count = 0;
+
+        // 마지막에 "고무오리 디버깅 끝"을 입력받을 때 까지 반복하니까 while을 써보자
+        while (true) {
+            line = reader.readLine();
+            // 종료 조건을 구현하자
+            if (line.equals("고무오리 디버깅 끝")) break;
+
+            // 입력이 "문제"면 count ++
+            if (line.equals("문제")) count++;
+
+                // 입력이 "고무오리"면 count--
+            else if (line.equals("고무오리") && count != 0) count--;
+
+                // 단 count == 0 일시 count += 2
+            else count += 2;
+        }
+        if (count == 0) {
+            System.out.println("고무오리야 사랑해");
+        } else {
+            System.out.println("힝구");
+        }
+    }
+}
