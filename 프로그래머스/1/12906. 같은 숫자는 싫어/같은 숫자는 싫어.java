@@ -10,6 +10,7 @@ public class Solution {
             // peek()로 확인하고 다르면 넣기
             else if (stack.peek() != arr[i]) stack.push(arr[i]);
         }
+        
         return stack.stream().mapToInt(i->i).toArray();
     }
 }
